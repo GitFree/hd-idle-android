@@ -314,7 +314,7 @@ int main(int argc, char *argv[])
                     /* disk had some activity */
                     if (ds->spun_down) {
                         /*dprint spin up event*/
-                        dprintf("spinup: %s, running: %ld, stopped: %ld\n",
+                        dprintf("***spin up: %s, running: %ld, stopped: %ld***\n",
                                 ds->name,
                                 (long) ds->spindown - (long) ds->spinup,
                                 (long) time(NULL) - (long) ds->spindown);
@@ -398,7 +398,7 @@ static void spindown_disk(const char *name)
     char dev_name[100];
     int fd;
 
-    dprintf("spindown: %s\n", name);
+    dprintf("***spin down: %s***\n", name);
 
     /* fabricate SCSI IO request */
     memset(&io_hdr, 0x00, sizeof(io_hdr));
